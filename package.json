@@ -1,0 +1,8 @@
+{
+  "name": "contxthub",
+  "private": true,
+  "workspaces": [
+    "contracts",
+    "services/*"
+  ]
+}
