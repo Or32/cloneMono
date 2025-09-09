@@ -1,0 +1,40 @@
+{
+  "name": "{{PROJECT_NAME}}",
+  "version": "1.0.0",
+  "description": "{{PROJECT_TITLE}} - MCP Server",
+  "main": "dist/main.js",
+    "type": "module",
+  "scripts": {
+  "dev": "contxt dev",
+  "build": "contxt deploy"
+  },
+  "keywords": [
+    "mcp",
+    "server",
+    "model-context-protocol"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@contxthub/cli": "^1.0.26",
+    "@modelcontextprotocol/inspector": "^0.16.1",
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "express": "^4.18.2",
+    "zod": "^3.22.2",
+    "cloudflared": "^0.7.0",
+    "dotenv": "^17.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^24.0.4",
+    "mcp-inspector": "^1.0.0",
+    "npm-run-all": "^4.1.5",
+    "open": "^10.1.2",
+    "ts-node-dev": "^2.0.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "@contxthub/cli",
+  "version": "1.0.30",
+  "description": "CLI tool for creating MCP servers",
+  "bin": {
+    "contxt": "./dist/index.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./src/index.ts"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc --build && cp -r template dist/template && chmod +x dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "server",
+    "cli",
+    "model-context-protocol"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.13.2",
+    "archiver": "^7.0.1",
+    "chalk": "^5.4.1",
+    "cloudflared": "^0.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "form-data": "^4.0.4",
+    "inquirer": "^12.9.3",
+    "localtunnel": "^2.0.2",
+    "ngrok": "^5.0.0-beta.2",
+    "open": "^10.1.2",
+    "path": "^0.12.7",
+    "pino": "^9.7.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "unique-names-generator": "^4.7.1",
+    "url": "^0.11.4",
+    "zod": "^4.0.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@contxthub/contracts": "workspace:*",
+    "@types/archiver": "^6.0.3",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.10",
+    "esbuild": "^0.25.5",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "tsup": "^8.5.0"
+  }
+}
