@@ -55,6 +55,7 @@ export class Lifecycle {
       }
 
       const decision = parsed.decision;
+      console.log(decision)
 
       if (decision.action === "final") {
         trace.push({ index: turn, decision, modelRaw: raw });

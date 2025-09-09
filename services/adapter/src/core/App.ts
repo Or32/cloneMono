@@ -45,7 +45,7 @@ export class App {
         // pretty print
         console.log(chalk.yellowBright(`AI> ${result.finalAnswer}`));
 
-        if (true) {
+        if (false) {
           console.log(chalk.gray("\n--- DEBUG TRACE ---"));
           result.trace.forEach((step) => {
             console.log(chalk.gray(`Turn ${step.index}:`));
