@@ -4,5 +4,6 @@
   "workspaces": [
     "contracts",
     "services/*"
-  ]
+  ],
+    "packageManager": "pnpm@9.0.0"
 }

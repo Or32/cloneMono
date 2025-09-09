@@ -1,0 +1,10 @@
+{
+  "builds": [
+    {
+      "src": "services/front/package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "buildCommand": "pnpm --filter ./services/front build",
+  "installCommand": "pnpm install --filter ./services/front..."
+}
