@@ -19,7 +19,7 @@ export function Transactional() {
       }
 
       return db.transaction(async (tx) => {
-        RequestContext.setTransactional(tx);
+        RequestContext.setTransactional(tx as unknown as typeof db);
         try {
           return await original.apply(this, args);
         } finally {

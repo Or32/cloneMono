@@ -1,6 +1,6 @@
 import z, { ZodType} from "zod";
 import { EndpointOptions, ProtectedHandler, PublicHandler } from "./type";
-import { Context } from "@/lib/trpc/context";
+import { Context, ProtectedContext } from "@/lib/trpc/context";
 
 type ReqOf<S extends ZodType<any>> = z.infer<S>;
 type ResOf<S extends ZodType<any>> = z.infer<S>;
@@ -11,7 +11,7 @@ export async function executeEndpointHandler<
 >(
     options: EndpointOptions<ReqSchema, ResSchema>,
     input: ReqOf<ReqSchema>,
-    ctx?: Context
+    ctx?: ProtectedContext
 ): Promise<ResOf<ResSchema>> {
 
     if (options.protected) {

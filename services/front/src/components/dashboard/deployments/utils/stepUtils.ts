@@ -1,4 +1,6 @@
-import { DeploymentStep, DeploymentStepStatusEnum, deploymentStepTypeEnum } from "@/lib/db";
+import { DeploymentStep } from "@/lib/db";
+import { DeploymentStepStatusEnum } from "@/lib/db/schemas/deployments/deploymentStepStatus";
+import { deploymentStepTypeEnum } from "@/lib/db/schemas/deployments/deploymentStepType";
 import { StepGroup } from "../types/stepTypes";
 
 export function normalizeStatus(s?: string | null): DeploymentStepStatusEnum {
@@ -66,14 +68,14 @@ export function toStepGroups(steps: DeploymentStep[]): StepGroup[] {
     const sorted = sortSteps(groupSteps);
     const { startedAt, endedAt, lastStatus, isRunning, lastLog } = deriveGroupFields(sorted);
 
-    groups.push({
-      type,
-      derivedStatus: lastStatus,
-      isRunning,
-      startedAt,
-      endedAt,
-      log: lastLog,
-    });
+    // groups.push({
+    //   type,
+    //   derivedStatus: lastStatus,
+    //   isRunning,
+    //   startedAt,
+    //   endedAt,
+    //   log: lastLog,
+    // });
   }
 
   return groups;

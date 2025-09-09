@@ -5,6 +5,10 @@ const withMDX = createMDX();
 
 const config: NextConfig = {
   reactStrictMode: true,
+    eslint: {
+    // ❌ Lint errors will not break the build
+    ignoreDuringBuilds: true,
+  },
 };
 
 

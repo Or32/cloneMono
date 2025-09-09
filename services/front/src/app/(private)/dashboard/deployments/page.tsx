@@ -1,11 +1,8 @@
 import DeploymentDetailsClient from "@/components/dashboard/deployments/DeploymentPage";
 
-interface PageProps {
-  searchParams: { id?: string }; // ✅ use query param, not path param
-}
 
-export default async function Page({ searchParams }: PageProps) {
-  const { id: deploymentId } = await searchParams; // 👈 await here
+export default async function PageTest({ searchParams }: any) {
+  const { id: deploymentId } = searchParams; // 👈 await here
 
 if (!deploymentId) {
   return (

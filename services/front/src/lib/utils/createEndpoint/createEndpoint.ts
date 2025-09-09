@@ -4,7 +4,7 @@ import { ZodType} from "zod";
 import { buildErrorResponse, buildSuccessResponse, successStatusForMethod } from "./http";
 import { getValidatedBodyOrThrow, validateResponseOrThrow } from "./validation";
 
-import type { Context } from "@/lib/trpc/context";
+import type { Context, ProtectedContext } from "@/lib/trpc/context";
 import { getAuthenticatedContext } from "./authContext";
 import { executeEndpointHandler } from "./handler";
 import { EndpointOptions } from "./type";
@@ -14,7 +14,7 @@ export function createEndpoint<ReqSchema extends ZodType<unknown>, ResSchema ext
 ) {
     return async (request: NextRequest): Promise<NextResponse> => {
         try {
-            const ctx: Context | undefined = options.protected
+            const ctx: ProtectedContext | undefined = options.protected
                 ? await getAuthenticatedContext(request)
                 : undefined;
 

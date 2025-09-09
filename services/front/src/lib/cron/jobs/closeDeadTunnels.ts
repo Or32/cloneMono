@@ -1,4 +1,4 @@
-import {closeDeadTunnels} from "@/services/liveDebugService";
+import { closeDeadTunnels } from '@/server/services/liveDebug.service';
 import { CronJob } from 'cron';
 
 const ONCE_AN_HOUR = "0 * * * *"

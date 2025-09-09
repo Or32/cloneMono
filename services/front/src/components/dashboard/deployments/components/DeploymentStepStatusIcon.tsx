@@ -1,4 +1,4 @@
-import { DeploymentStepStatusEnum } from "@/lib/db";
+import { DeploymentStepStatusEnum } from "@/lib/db/schemas/deployments/deploymentStepStatus";
 import { CheckCircle2, Clock3, Loader2, TriangleAlert, XCircle } from "lucide-react";
 
 interface DeploymentStepStatusIconProps {

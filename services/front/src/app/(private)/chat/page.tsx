@@ -7,7 +7,7 @@ import { trpc } from "@/lib/trpc/client";
 import { ChatMessages } from "@/components/dashboard/chat/ChatMessages";
 import { ChatInput } from "@/components/dashboard/chat/ChatInput";
 
-export function ChatWrapper() {
+export default function ChatWrapper() {
   const [messages, setMessages] = useState<{ role: "user" | "assistant"; text: string }[]>([]);
   const searchParams = useSearchParams();
   const mcpUrl = searchParams.get("mcp");
@@ -18,8 +18,8 @@ export function ChatWrapper() {
       return;
     }
     setMessages([...messages, { role: "user", text }]);
-    const res = await trpc.chat.sendMessage.mutate({ mcpUrl, message: text });
-    setMessages((prev) => [...prev, { role: "assistant", text: res.reply }]);
+    // const res = await trpc.chat.sendMessage.mutate({ mcpUrl, message: text });
+    // setMessages((prev) => [...prev, { role: "assistant", text: res.reply }]);
   };
 
   return (

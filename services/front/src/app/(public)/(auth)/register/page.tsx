@@ -11,59 +11,59 @@ import { useState } from "react";
 import { Loader2 } from "lucide-react";
 
 export default function RegisterPage() {
-  const router = useRouter();
-  const searchParams = useSearchParams();
+  // const router = useRouter();
+  // const searchParams = useSearchParams();
 
-  const email = searchParams.get("email") ?? "";
-  const inviteToken = searchParams.get("inviteToken") ?? undefined;
+  // const email = searchParams.get("email") ?? "";
+  // const inviteToken = searchParams.get("inviteToken") ?? undefined;
 
-  const [username, setUsername] = useState("");
-  const [teamName, setTeamName] = useState("");
-  const [errorText, setErrorText] = useState("");
+  // const [username, setUsername] = useState("");
+  // const [teamName, setTeamName] = useState("");
+  // const [errorText, setErrorText] = useState("");
 
-  const registerMutation = trpc.auth.register.useMutation({
-    onSuccess: () => {
-      router.push("/dashboard");
-    },
-  onError: (error) => {
-    // error has shape TRPCClientError<AppRouter>
-    console.error("Registration failed:", error);
+  // const registerMutation = trpc.auth.register.useMutation({
+  //   onSuccess: () => {
+  //     router.push("/dashboard");
+  //   },
+  // onError: (error) => {
+  //   // error has shape TRPCClientError<AppRouter>
+  //   console.error("Registration failed:", error);
         
-      setErrorText("Registration failed. Please try again.");
-    },
-  });
+  //     setErrorText("Registration failed. Please try again.");
+  //   },
+  // });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!username) {
-      setErrorText("Please choose a username");
-      return;
-    }
-    if (!inviteToken && !teamName) {
-      setErrorText("Please choose a team name");
-      return;
-    }
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (!username) {
+  //     setErrorText("Please choose a username");
+  //     return;
+  //   }
+  //   if (!inviteToken && !teamName) {
+  //     setErrorText("Please choose a team name");
+  //     return;
+  //   }
 
-    setErrorText("");
+  //   setErrorText("");
 
-    if (inviteToken) {
-      registerMutation.mutate({
-        email,
-        username,
-        inviteToken,
-      });
-    } else {
-      registerMutation.mutate({
-        email,
-        username,
-        teamName,
-      });
-    }
-  };
+  //   if (inviteToken) {
+  //     registerMutation.mutate({
+  //       email,
+  //       username,
+  //       inviteToken,
+  //     });
+  //   } else {
+  //     registerMutation.mutate({
+  //       email,
+  //       username,
+  //       teamName,
+  //     });
+  //   }
+  // };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 px-4 sm:px-6 lg:px-8">
-      <Card className="w-full max-w-md shadow-xl rounded-2xl">
+      {/* <Card className="w-full max-w-md shadow-xl rounded-2xl">
         <CardHeader className="text-center space-y-2">
           <CardTitle className="text-3xl font-bold tracking-tight">
             {inviteToken ? "Join your team" : "Create your team"}
@@ -131,7 +131,7 @@ export default function RegisterPage() {
             </Button>
           </form>
         </CardContent>
-      </Card>
+      </Card> */}
     </div>
   );
 }

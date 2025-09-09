@@ -4,7 +4,7 @@ import { fetchRequestHandler } from '@trpc/server/adapters/fetch';
 import { RequestContext } from '@/lib/context/requestContext';
 import { auth } from '@/lib/auth/auth.config';
 
-export const handler = async (req: Request) => {
+const handler = async (req: Request) => {
   const session = await auth();
 
   if (!session?.user?.id || !session?.activeTeam?.id) {

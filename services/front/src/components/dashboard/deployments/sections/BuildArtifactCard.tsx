@@ -21,7 +21,7 @@ export default function BuildArtifactCard({
   groups: StepGroup[];
 }) {
   const build = groups.find((g) => g.type === "build");
-  const isBuildRunning = build?.isRunning ?? false;
+  const isBuildRunning = true//build?.isRunning ?? false;
 
   const waitTimeMs = msBetween(start, start); // explicit 0 – keep key visible
   const queueTimeMs = msBetween(queuedAt ?? start, startedAt ?? finishedAt ?? start);

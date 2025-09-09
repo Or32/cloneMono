@@ -1,7 +1,7 @@
 import {NextRequest, NextResponse} from 'next/server';
 import {z} from 'zod';
-import {liveDebugRequestSchema} from "@/lib/contracts/SDK/liveDebug.contract";
 import { saveNewLiveDebugSession } from '@/server/services/liveDebug.service';
+import { liveDebugRequestSchema } from '@contxthub/contracts';
 
 export async function POST(req: NextRequest) {
     try {

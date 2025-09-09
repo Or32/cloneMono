@@ -1,4 +1,5 @@
-import { DeploymentStepStatusEnum, deploymentStepTypeEnum } from "@/lib/db";
+import { DeploymentStepStatusEnum } from "@/lib/db/schemas/deployments/deploymentStepStatus";
+import { deploymentStepTypeEnum } from "@/lib/db/schemas/deployments/deploymentStepType";
 
 export type RawStep = {
   id?: string | number;
